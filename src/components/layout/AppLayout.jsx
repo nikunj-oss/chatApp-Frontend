@@ -1,20 +1,20 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { Drawer, Grid, Skeleton } from "@mui/material";
-import Title from "../shared/Title";
+import Title from "../shared/Title.jsx";
 import Header from "./Header";
-import ChatList from "../specific/Chatlist";
+import ChatList from "../specific/ChatList.jsx";
 import {useNavigate, useParams } from "react-router-dom";
 import Profile from "../specific/Profile";
-import { useMyChatsQuery } from "../../redux/api/api";
+import { useMyChatsQuery } from "../../redux/api/api.js";
 import { useDispatch, useSelector } from "react-redux";
-import { setIsDeleteMenu, setIsMobile, setSelectedDeleteChat } from "../../redux/reducers/misc";
+import { setIsDeleteMenu, setIsMobile, setSelectedDeleteChat } from "../../redux/reducers/misc.js";
 import {useErrors, useSocketsEvents} from "../../hooks/hook"
 import { getSocket } from "../../socket";
-import { NEW_MESSAGE_ALERT, NEW_REQUEST, ONLINE_USERS, REFETCH_CHATS } from "../../constants/events";
+import { NEW_MESSAGE_ALERT, NEW_REQUEST, ONLINE_USERS, REFETCH_CHATS } from "../../constants/events.js";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { incrementNotification, setNewMessagesAlert } from "../../redux/reducers/chat";
-import { getOrSaveFromStorage } from "../../lib/features";
-import DeleteChatMenu from "../dialogs/DeleteChatMenu";
+import { getOrSaveFromStorage } from "../../lib/features.js";
+import DeleteChatMenu from "../dialogs/DeleteChatMenu.jsx";
 
 const AppLayout = (WrappedComponent) => {
   // eslint-disable-next-line react/display-name
