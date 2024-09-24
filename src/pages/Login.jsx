@@ -292,25 +292,109 @@ const Login = () => {
       </Grid>
 
       {/* Right Side - Logo or Additional Content */}
-      <Grid item xs={12} sm={6} style={{
-        backgroundImage: "linear-gradient(to bottom right, #000000, #434343)",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
+<Grid
+  item
+  xs={12}
+  sm={6}
+  style={{
+    backgroundImage: "linear-gradient(to bottom right, #1c1c1c, #434343)",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    color: "white",
+    textAlign: "center",
+    padding: "2rem",
+    fontFamily: "'Roboto', sans-serif",
+    position: "relative",
+    overflow: "hidden",
+  }}
+>
+  <Box
+    sx={{
+      animation: "fadeIn 1s",
+      position: "relative",
+      zIndex: 2,
+    }}
+  >
+    <Typography
+      variant="h2"
+      component="h1"
+      gutterBottom
+      sx={{
+        fontWeight: "700",
+        fontSize: { xs: "2rem", sm: "3rem", md: "4rem" },
+      }}
+    >
+      Welcome to Our Chat App
+    </Typography>
+    <Typography
+      variant="h6"
+      component="p"
+      sx={{
+        fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
+        lineHeight: 1.6,
+      }}
+    >
+      Connect with friends and elevate your conversations.
+    </Typography>
+  </Box>
+  {/* Floating Chat Bubble Animation */}
+  <Box
+    sx={{
+      position: "absolute",
+      bottom: "10%",
+      right: "10%",
+      width: "80px",
+      height: "80px",
+      backgroundColor: "#f50057",
+      borderRadius: "50%",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      boxShadow: "0 4px 12px rgba(0, 0, 0, 0.3)",
+      animation: "float 3s ease-in-out infinite",
+    }}
+  >
+    <Typography
+      variant="h6"
+      sx={{
         color: "white",
+        fontWeight: "bold",
         textAlign: "center",
-        padding: "2rem",
-        fontFamily: "'Roboto', sans-serif",
-      }}>
-        <Box>
-          <Typography variant="h2" component="h1" gutterBottom sx={{ fontWeight: '700', fontSize: { xs: "2rem", sm: "3rem", md: "4rem" } }}>
-            Welcome to Our Platform
-          </Typography>
-          <Typography variant="h6" component="p" sx={{ fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" }, lineHeight: 1.6 }}>
-            Join us today and elevate your learning experience.
-          </Typography>
-        </Box>
-      </Grid>
+      }}
+    >
+      💬
+    </Typography>
+  </Box>
+</Grid>
+
+<style>
+  {`
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0% {
+        transform: translatey(0px);
+      }
+      50% {
+        transform: translatey(-10px);
+      }
+      100% {
+        transform: translatey(0px);
+      }
+    }
+  `}
+</style>
+
     </Grid>
   );
 };
